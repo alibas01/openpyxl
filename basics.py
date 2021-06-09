@@ -35,7 +35,7 @@ sheet = book.active
 sheet['A1'] = 1
 sheet.cell(row=2, column=2).value = 2
 
-book.save('write2cell.xlsx')
+book.save('./excel_output/write2cell.xlsx')
 
 #appending
 #from openpyxl import Workbook
@@ -55,7 +55,7 @@ rows = (
 for row in rows:
     sheet.append(row)
 
-book.save('appending.xlsx')
+book.save('./excel_output/appending.xlsx')
 
 #iterate by rows
 #from openpyxl import Workbook
@@ -80,7 +80,7 @@ for row in sheet.iter_rows(min_row=1, min_col=1, max_row=6, max_col=3):
         print(cell.value, end=" ")
     print()    
 
-book.save('iterbyrows.xlsx')
+book.save('./excel_output/iterbyrows.xlsx')
 
 # iterate by columns
 # from openpyxl import Workbook
@@ -105,7 +105,7 @@ for row in sheet.iter_cols(min_row=1, min_col=1, max_row=6, max_col=3):
         print(cell.value, end=" ")
     print()    
 
-book.save('iterbycols.xlsx')
+book.save('./excel_output/iterbycols.xlsx')
 
 #filter/sort
 #from openpyxl import Workbook
@@ -163,7 +163,7 @@ print("Maximum column: {0}".format(sheet.max_column))
 for c1, c2 in sheet[sheet.dimensions]:
     print(c1.value, c2.value)
 
-book.save('dimensions.xlsx')
+book.save('./excel_output/dimensions.xlsx')
 
 #merging
 #from openpyxl import Workbook
@@ -178,7 +178,7 @@ cell = sheet.cell(row=1, column=1)
 cell.value = 'Sunny day'
 cell.alignment = Alignment(horizontal='center', vertical='center')
 
-book.save('merging.xlsx')
+book.save('./excel_output/merging.xlsx')
 
 #formulas
 #from openpyxl import Workbook
@@ -202,7 +202,7 @@ cell = sheet.cell(row=7, column=2)
 cell.value = "=SUM(A1:B6)"
 cell.font = cell.font.copy(bold=True)
 
-book.save('formulas.xlsx')
+book.save('./excel_output/formulas.xlsx')
 
 #charts
 #from openpyxl import Workbook
